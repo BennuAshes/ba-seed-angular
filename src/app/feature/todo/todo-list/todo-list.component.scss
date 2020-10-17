@@ -1,0 +1,39 @@
+@use "functions";
+
+.selected-item {
+    border: thin solid black;
+}
+
+.todo-content {
+    min-width: functions.calc-rem(260px);
+    margin-left: functions.calc-rem(20px);
+    min-height: functions.calc-rem(160px);
+    display: flex;
+    flex-direction: row;
+
+}
+form {
+    display: flex;
+    flex-direction: row;
+}
+.todo-list-container {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.todo-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.content-fields {
+    display:flex;
+    flex-direction: column;
+    margin: 0 functions.calc-rem(16px);
+    width: 100%;
+    .content-item {
+        height: functions.calc-rem(65.5px);
+    }
+}

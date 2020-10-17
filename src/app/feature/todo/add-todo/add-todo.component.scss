@@ -1,0 +1,15 @@
+@use "functions";
+.add-todo-container {
+    box-sizing: border-box;
+    
+    .add-todo {
+        display: flex;
+        flex-direction: column;
+        width: functions.calc-rem(300px);
+        
+        label {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

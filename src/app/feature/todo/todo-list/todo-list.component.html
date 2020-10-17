@@ -1,0 +1,42 @@
+<mat-card *ngIf="todos?.length <= 0">
+    no todos found
+</mat-card>
+
+
+<mat-list>        
+<mat-card role="listItem" 
+                *ngFor="let todo of todos" [ngClass]="{'selected-item': todo.id == selectedId}">
+    <div>                
+        <div class="todo-content">
+            <div class="" mat-icon-item><mat-checkbox (change)="update(todo.id, undefined, undefined, $event.checked)" [checked]="todo.isCompleted"></mat-checkbox></div>
+            <div *ngIf="!todo.isEditMode" (click)="markAsTrue(todo)" class="content-fields">
+                <div class="todo-name content-item">
+                    {{todo.name}}
+                </div>                
+                <div class="content-item">{{todo.description}}</div>                        
+                
+            </div>
+            
+            <form [formGroup]="form">
+            <div *ngIf="todo.isEditMode" class="content-fields">
+                    <div class="todo-name">                        
+                        <mat-form-field class="name-form-field">
+                            <mat-label>name</mat-label>
+                            <input formControlName="name" matInput type="text">
+                        </mat-form-field>
+                    </div>                
+                    <div>
+                        <mat-form-field class="description-form-field">
+                            <mat-label>description</mat-label>
+                            <input formControlName="description" matInput type="text">
+                        </mat-form-field>
+                    </div>
+                    
+                    <div class="todo-actions">
+                        <button mat-stroked-button (click)="update(todo.id, name, description, isCompleted)">save</button>
+                    </div>
+            </div>
+        </form>
+        </div>
+    </div>            
+</mat-card>

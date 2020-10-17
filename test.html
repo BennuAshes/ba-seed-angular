@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <script>
+            function getData() {
+                return new Promise(resolve => resolve({data: 'some data'}))
+            }
+            const otherData = 1;
+            const data = getData();
+            console.log(data);
+        </script>
+    </body>    
+</html>

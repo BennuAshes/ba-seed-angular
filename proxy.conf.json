@@ -1,0 +1,6 @@
+{
+    "/ba-firebase-seed/us-central1/myg": {
+      "target": "https://p35xd5fqbvaadmdewavfifjl5i.appsync-api.us-east-1.amazonaws.com/graphql",
+      "secure": true
+    }
+  }

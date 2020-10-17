@@ -1,0 +1,17 @@
+<mat-card class="add-todo-container">
+    <form class="add-todo" [formGroup]="form">
+        <label class="form-label">
+            <span class="form-name">Name: </span>
+            <span class="form-control">
+                <input formControlName="name"/>
+            </span>
+        </label>
+        <label>
+            Description: <textarea formControlName="description"></textarea>
+        </label>
+        <label>
+            IsCompleted: <mat-checkbox formControlName="isCompleted"></mat-checkbox>
+        </label>
+        <button *ngIf="!selectedId" (click)="add(form.get('name').value, form.get('description').value, form.get('isCompleted').value)">add</button>
+    </form>
+</mat-card>

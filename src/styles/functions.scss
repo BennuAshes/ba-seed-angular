@@ -1,0 +1,6 @@
+@use "variables";
+
+
+@function calc-rem($pixels, $context: variables.$font-size) {
+    @return ($pixels / $context) * 1em;
+}
